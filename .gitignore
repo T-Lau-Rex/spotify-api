@@ -1,0 +1,13 @@
+###> symfony/frameowrk-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/
+/vendor/
+###< symfony/frameowrk-bundle ###
+
+###> app/extras ###
+/.idea
+/db
+###< app/extras ###
