@@ -12,7 +12,8 @@ Pasos a seguir para la configuración
 
 ''' docker compose up -d '''
 ''' docker compose exec web bash '''
-''' compose install '''
+Cortés -> ''' docker exec -it spotify-api /bin/bash '''
+''' composer install '''
 
 4. Ejecutar el proyecto
 
