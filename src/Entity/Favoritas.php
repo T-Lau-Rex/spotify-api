@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Favoritas
 {
     /**
-     * @var \Playlist
+     * @var Playlist
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

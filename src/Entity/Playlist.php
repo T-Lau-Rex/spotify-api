@@ -43,7 +43,7 @@ class Playlist
     private $fechaCreacion;
 
     /**
-     * @var \Usuario
+     * @var Usuario
      *
      * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({

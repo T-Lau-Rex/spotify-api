@@ -36,7 +36,7 @@ class Pago
     private $total;
 
     /**
-     * @var \FormaPago
+     * @var FormaPago
      *
      * @ORM\ManyToOne(targetEntity="FormaPago")
      * @ORM\JoinColumns({
@@ -46,7 +46,7 @@ class Pago
     private $formaPago;
 
     /**
-     * @var \Suscripcion
+     * @var Suscripcion
      *
      * @ORM\ManyToOne(targetEntity="Suscripcion")
      * @ORM\JoinColumns({

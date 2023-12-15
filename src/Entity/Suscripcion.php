@@ -36,7 +36,7 @@ class Suscripcion
     private $fechaFin;
 
     /**
-     * @var \Premium
+     * @var Premium
      *
      * @ORM\ManyToOne(targetEntity="Premium")
      * @ORM\JoinColumns({

@@ -34,7 +34,7 @@ class Patrocinada
     private $fechaFin;
 
     /**
-     * @var \Playlist
+     * @var Playlist
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

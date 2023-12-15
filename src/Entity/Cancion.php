@@ -50,7 +50,7 @@ class Cancion
     private $numeroReproducciones;
 
     /**
-     * @var \Album
+     * @var Album
      *
      * @ORM\ManyToOne(targetEntity="Album")
      * @ORM\JoinColumns({

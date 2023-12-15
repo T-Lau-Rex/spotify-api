@@ -20,7 +20,7 @@ class Premium
     private $fechaRenovacion;
 
     /**
-     * @var \Usuario
+     * @var Usuario
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

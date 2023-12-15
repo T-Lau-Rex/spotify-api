@@ -29,7 +29,7 @@ class Letra
     private $ruta;
 
     /**
-     * @var \Cancion
+     * @var Cancion
      *
      * @ORM\ManyToOne(targetEntity="Cancion")
      * @ORM\JoinColumns({
