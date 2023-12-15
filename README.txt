@@ -18,5 +18,3 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 4. Ejecutar el proyecto
 
 ''' mysql -u root -pdbrootpass -h dbms-add < spotify.sql '''
-
-git init
