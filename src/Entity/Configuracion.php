@@ -34,7 +34,7 @@ class Configuracion
     private $normalizacion;
 
     /**
-     * @var \Usuario
+     * @var Usuario
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -46,7 +46,7 @@ class Configuracion
     private $usuario;
 
     /**
-     * @var \Calidad
+     * @var Calidad
      *
      * @ORM\ManyToOne(targetEntity="Calidad")
      * @ORM\JoinColumns({
@@ -56,7 +56,7 @@ class Configuracion
     private $calidad;
 
     /**
-     * @var \Idioma
+     * @var Idioma
      *
      * @ORM\ManyToOne(targetEntity="Idioma")
      * @ORM\JoinColumns({
@@ -66,7 +66,7 @@ class Configuracion
     private $idioma;
 
     /**
-     * @var \TipoDescarga
+     * @var TipoDescarga
      *
      * @ORM\ManyToOne(targetEntity="TipoDescarga")
      * @ORM\JoinColumns({

@@ -57,7 +57,7 @@ class Capitulo
     private $numeroReproducciones;
 
     /**
-     * @var \Podcast
+     * @var Podcast
      *
      * @ORM\ManyToOne(targetEntity="Podcast")
      * @ORM\JoinColumns({

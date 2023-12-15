@@ -20,7 +20,7 @@ class Paypal
     private $usernamePaypal;
 
     /**
-     * @var \FormaPago
+     * @var FormaPago
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class ColaboracionArtistica
 {
     /**
-     * @var \Cancion
+     * @var Cancion
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -25,7 +25,7 @@ class ColaboracionArtistica
     private $cancion;
 
     /**
-     * @var \Artista
+     * @var Artista
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -37,7 +37,7 @@ class ColaboracionArtistica
     private $artistaColaborador;
 
     /**
-     * @var \Artista
+     * @var Artista
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

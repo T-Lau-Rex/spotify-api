@@ -64,7 +64,7 @@ class Album
     private $anyo;
 
     /**
-     * @var \Artista
+     * @var Artista
      *
      * @ORM\ManyToOne(targetEntity="Artista")
      * @ORM\JoinColumns({

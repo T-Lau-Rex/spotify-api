@@ -20,7 +20,7 @@ class AnyadeCancionPlaylist
     private $fechaAnyadida;
 
     /**
-     * @var \Usuario
+     * @var Usuario
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -32,7 +32,7 @@ class AnyadeCancionPlaylist
     private $usuario;
 
     /**
-     * @var \Playlist
+     * @var Playlist
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -44,7 +44,7 @@ class AnyadeCancionPlaylist
     private $playlist;
 
     /**
-     * @var \Cancion
+     * @var Cancion
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

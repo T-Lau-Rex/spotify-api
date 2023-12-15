@@ -27,7 +27,7 @@ class Free
     private $tiempoPublicidad = 600;
 
     /**
-     * @var \Usuario
+     * @var Usuario
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")

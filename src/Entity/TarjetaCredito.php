@@ -41,7 +41,7 @@ class TarjetaCredito
     private $codigoSeguridad;
 
     /**
-     * @var \FormaPago
+     * @var FormaPago
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
