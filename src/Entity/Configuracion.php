@@ -76,4 +76,130 @@ class Configuracion
     private $tipoDescarga;
 
 
+
+    /**
+     * Get the value of autoplay
+     */
+    public function isAutoplay(): bool
+    {
+        return $this->autoplay;
+    }
+
+    /**
+     * Set the value of autoplay
+     */
+    public function setAutoplay(bool $autoplay): self
+    {
+        $this->autoplay = $autoplay;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of ajuste
+     */
+    public function isAjuste(): bool
+    {
+        return $this->ajuste;
+    }
+
+    /**
+     * Set the value of ajuste
+     */
+    public function setAjuste(bool $ajuste): self
+    {
+        $this->ajuste = $ajuste;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of normalizacion
+     */
+    public function isNormalizacion(): bool
+    {
+        return $this->normalizacion;
+    }
+
+    /**
+     * Set the value of normalizacion
+     */
+    public function setNormalizacion(bool $normalizacion): self
+    {
+        $this->normalizacion = $normalizacion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     */
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of usuario
+     */
+    public function setUsuario(Usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of calidad
+     */
+    public function getCalidad(): Calidad
+    {
+        return $this->calidad;
+    }
+
+    /**
+     * Set the value of calidad
+     */
+    public function setCalidad(Calidad $calidad): self
+    {
+        $this->calidad = $calidad;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idioma
+     */
+    public function getIdioma(): Idioma
+    {
+        return $this->idioma;
+    }
+
+    /**
+     * Set the value of idioma
+     */
+    public function setIdioma(Idioma $idioma): self
+    {
+        $this->idioma = $idioma;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tipoDescarga
+     */
+    public function getTipoDescarga(): TipoDescarga
+    {
+        return $this->tipoDescarga;
+    }
+
+    /**
+     * Set the value of tipoDescarga
+     */
+    public function setTipoDescarga(TipoDescarga $tipoDescarga): self
+    {
+        $this->tipoDescarga = $tipoDescarga;
+
+        return $this;
+    }
 }

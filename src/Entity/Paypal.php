@@ -32,4 +32,40 @@ class Paypal
     private $formaPago;
 
 
+
+    /**
+     * Get the value of usernamePaypal
+     */
+    public function getUsernamePaypal(): string
+    {
+        return $this->usernamePaypal;
+    }
+
+    /**
+     * Set the value of usernamePaypal
+     */
+    public function setUsernamePaypal(string $usernamePaypal): self
+    {
+        $this->usernamePaypal = $usernamePaypal;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of formaPago
+     */
+    public function getFormaPago(): FormaPago
+    {
+        return $this->formaPago;
+    }
+
+    /**
+     * Set the value of formaPago
+     */
+    public function setFormaPago(FormaPago $formaPago): self
+    {
+        $this->formaPago = $formaPago;
+
+        return $this;
+    }
 }

@@ -49,4 +49,58 @@ class ColaboracionArtistica
     private $artista;
 
 
+
+    /**
+     * Get the value of cancion
+     */
+    public function getCancion(): Cancion
+    {
+        return $this->cancion;
+    }
+
+    /**
+     * Set the value of cancion
+     */
+    public function setCancion(Cancion $cancion): self
+    {
+        $this->cancion = $cancion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of artistaColaborador
+     */
+    public function getArtistaColaborador(): Artista
+    {
+        return $this->artistaColaborador;
+    }
+
+    /**
+     * Set the value of artistaColaborador
+     */
+    public function setArtistaColaborador(Artista $artistaColaborador): self
+    {
+        $this->artistaColaborador = $artistaColaborador;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of artista
+     */
+    public function getArtista(): Artista
+    {
+        return $this->artista;
+    }
+
+    /**
+     * Set the value of artista
+     */
+    public function setArtista(Artista $artista): self
+    {
+        $this->artista = $artista;
+
+        return $this;
+    }
 }

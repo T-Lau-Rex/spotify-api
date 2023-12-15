@@ -46,4 +46,58 @@ class Premium
         $this->cancion = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get the value of fechaRenovacion
+     */
+    public function getFechaRenovacion(): \DateTime
+    {
+        return $this->fechaRenovacion;
+    }
+
+    /**
+     * Set the value of fechaRenovacion
+     */
+    public function setFechaRenovacion(\DateTime $fechaRenovacion): self
+    {
+        $this->fechaRenovacion = $fechaRenovacion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     */
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of usuario
+     */
+    public function setUsuario(Usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cancion
+     */
+    public function getCancion(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->cancion;
+    }
+
+    /**
+     * Set the value of cancion
+     */
+    public function setCancion(\Doctrine\Common\Collections\Collection $cancion): self
+    {
+        $this->cancion = $cancion;
+
+        return $this;
+    }
 }

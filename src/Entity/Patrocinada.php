@@ -46,4 +46,76 @@ class Patrocinada
     private $playlist;
 
 
+
+    /**
+     * Get the value of patrocinada
+     */
+    public function isPatrocinada(): bool
+    {
+        return $this->patrocinada;
+    }
+
+    /**
+     * Set the value of patrocinada
+     */
+    public function setPatrocinada(bool $patrocinada): self
+    {
+        $this->patrocinada = $patrocinada;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fechaInicio
+     */
+    public function getFechaInicio(): \DateTime
+    {
+        return $this->fechaInicio;
+    }
+
+    /**
+     * Set the value of fechaInicio
+     */
+    public function setFechaInicio(\DateTime $fechaInicio): self
+    {
+        $this->fechaInicio = $fechaInicio;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fechaFin
+     */
+    public function getFechaFin(): ?\DateTime
+    {
+        return $this->fechaFin;
+    }
+
+    /**
+     * Set the value of fechaFin
+     */
+    public function setFechaFin(?\DateTime $fechaFin): self
+    {
+        $this->fechaFin = $fechaFin;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of playlist
+     */
+    public function getPlaylist(): Playlist
+    {
+        return $this->playlist;
+    }
+
+    /**
+     * Set the value of playlist
+     */
+    public function setPlaylist(Playlist $playlist): self
+    {
+        $this->playlist = $playlist;
+
+        return $this;
+    }
 }

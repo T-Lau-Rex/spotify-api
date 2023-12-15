@@ -53,4 +53,94 @@ class TarjetaCredito
     private $formaPago;
 
 
+
+    /**
+     * Get the value of numeroTarjeta
+     */
+    public function getNumeroTarjeta(): string
+    {
+        return $this->numeroTarjeta;
+    }
+
+    /**
+     * Set the value of numeroTarjeta
+     */
+    public function setNumeroTarjeta(string $numeroTarjeta): self
+    {
+        $this->numeroTarjeta = $numeroTarjeta;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of mesCaducidad
+     */
+    public function isMesCaducidad(): bool
+    {
+        return $this->mesCaducidad;
+    }
+
+    /**
+     * Set the value of mesCaducidad
+     */
+    public function setMesCaducidad(bool $mesCaducidad): self
+    {
+        $this->mesCaducidad = $mesCaducidad;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of anyoCaducidad
+     */
+    public function getAnyoCaducidad(): \DateTime
+    {
+        return $this->anyoCaducidad;
+    }
+
+    /**
+     * Set the value of anyoCaducidad
+     */
+    public function setAnyoCaducidad(\DateTime $anyoCaducidad): self
+    {
+        $this->anyoCaducidad = $anyoCaducidad;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of codigoSeguridad
+     */
+    public function getCodigoSeguridad(): int
+    {
+        return $this->codigoSeguridad;
+    }
+
+    /**
+     * Set the value of codigoSeguridad
+     */
+    public function setCodigoSeguridad(int $codigoSeguridad): self
+    {
+        $this->codigoSeguridad = $codigoSeguridad;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of formaPago
+     */
+    public function getFormaPago(): FormaPago
+    {
+        return $this->formaPago;
+    }
+
+    /**
+     * Set the value of formaPago
+     */
+    public function setFormaPago(FormaPago $formaPago): self
+    {
+        $this->formaPago = $formaPago;
+
+        return $this;
+    }
 }

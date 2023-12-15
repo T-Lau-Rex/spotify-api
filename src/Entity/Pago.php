@@ -56,4 +56,94 @@ class Pago
     private $suscripcion;
 
 
+
+    /**
+     * Get the value of numeroOrden
+     */
+    public function getNumeroOrden(): int
+    {
+        return $this->numeroOrden;
+    }
+
+    /**
+     * Set the value of numeroOrden
+     */
+    public function setNumeroOrden(int $numeroOrden): self
+    {
+        $this->numeroOrden = $numeroOrden;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fecha
+     */
+    public function getFecha(): \DateTime
+    {
+        return $this->fecha;
+    }
+
+    /**
+     * Set the value of fecha
+     */
+    public function setFecha(\DateTime $fecha): self
+    {
+        $this->fecha = $fecha;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of total
+     */
+    public function getTotal(): float
+    {
+        return $this->total;
+    }
+
+    /**
+     * Set the value of total
+     */
+    public function setTotal(float $total): self
+    {
+        $this->total = $total;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of formaPago
+     */
+    public function getFormaPago(): FormaPago
+    {
+        return $this->formaPago;
+    }
+
+    /**
+     * Set the value of formaPago
+     */
+    public function setFormaPago(FormaPago $formaPago): self
+    {
+        $this->formaPago = $formaPago;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of suscripcion
+     */
+    public function getSuscripcion(): Suscripcion
+    {
+        return $this->suscripcion;
+    }
+
+    /**
+     * Set the value of suscripcion
+     */
+    public function setSuscripcion(Suscripcion $suscripcion): self
+    {
+        $this->suscripcion = $suscripcion;
+
+        return $this;
+    }
 }

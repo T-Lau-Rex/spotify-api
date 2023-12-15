@@ -32,4 +32,40 @@ class Activa
     private $playlist;
 
 
+
+    /**
+     * Get the value of esCompartida
+     */
+    public function isEsCompartida(): bool
+    {
+        return $this->esCompartida;
+    }
+
+    /**
+     * Set the value of esCompartida
+     */
+    public function setEsCompartida(bool $esCompartida): self
+    {
+        $this->esCompartida = $esCompartida;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of playlist
+     */
+    public function getPlaylist(): Playlist
+    {
+        return $this->playlist;
+    }
+
+    /**
+     * Set the value of playlist
+     */
+    public function setPlaylist(Playlist $playlist): self
+    {
+        $this->playlist = $playlist;
+
+        return $this;
+    }
 }

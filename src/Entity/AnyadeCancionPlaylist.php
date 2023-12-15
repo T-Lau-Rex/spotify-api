@@ -56,4 +56,76 @@ class AnyadeCancionPlaylist
     private $cancion;
 
 
+
+    /**
+     * Get the value of fechaAnyadida
+     */
+    public function getFechaAnyadida(): \DateTime
+    {
+        return $this->fechaAnyadida;
+    }
+
+    /**
+     * Set the value of fechaAnyadida
+     */
+    public function setFechaAnyadida(\DateTime $fechaAnyadida): self
+    {
+        $this->fechaAnyadida = $fechaAnyadida;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     */
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of usuario
+     */
+    public function setUsuario(Usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of playlist
+     */
+    public function getPlaylist(): Playlist
+    {
+        return $this->playlist;
+    }
+
+    /**
+     * Set the value of playlist
+     */
+    public function setPlaylist(Playlist $playlist): self
+    {
+        $this->playlist = $playlist;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cancion
+     */
+    public function getCancion(): Cancion
+    {
+        return $this->cancion;
+    }
+
+    /**
+     * Set the value of cancion
+     */
+    public function setCancion(Cancion $cancion): self
+    {
+        $this->cancion = $cancion;
+
+        return $this;
+    }
 }
