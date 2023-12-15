@@ -67,4 +67,112 @@ class Playlist
         $this->usuarioSeguidor = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get the value of id
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     */
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of titulo
+     */
+    public function getTitulo(): string
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * Set the value of titulo
+     */
+    public function setTitulo(string $titulo): self
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of numeroCanciones
+     */
+    public function getNumeroCanciones(): ?int
+    {
+        return $this->numeroCanciones;
+    }
+
+    /**
+     * Set the value of numeroCanciones
+     */
+    public function setNumeroCanciones(?int $numeroCanciones): self
+    {
+        $this->numeroCanciones = $numeroCanciones;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fechaCreacion
+     */
+    public function getFechaCreacion(): ?\DateTime
+    {
+        return $this->fechaCreacion;
+    }
+
+    /**
+     * Set the value of fechaCreacion
+     */
+    public function setFechaCreacion(?\DateTime $fechaCreacion): self
+    {
+        $this->fechaCreacion = $fechaCreacion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     */
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of usuario
+     */
+    public function setUsuario(Usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuarioSeguidor
+     */
+    public function getUsuarioSeguidor(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->usuarioSeguidor;
+    }
+
+    /**
+     * Set the value of usuarioSeguidor
+     */
+    public function setUsuarioSeguidor(\Doctrine\Common\Collections\Collection $usuarioSeguidor): self
+    {
+        $this->usuarioSeguidor = $usuarioSeguidor;
+
+        return $this;
+    }
 }

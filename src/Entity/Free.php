@@ -39,4 +39,58 @@ class Free
     private $usuario;
 
 
+
+    /**
+     * Get the value of fechaRevision
+     */
+    public function getFechaRevision(): \DateTime
+    {
+        return $this->fechaRevision;
+    }
+
+    /**
+     * Set the value of fechaRevision
+     */
+    public function setFechaRevision(\DateTime $fechaRevision): self
+    {
+        $this->fechaRevision = $fechaRevision;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tiempoPublicidad
+     */
+    public function getTiempoPublicidad(): int
+    {
+        return $this->tiempoPublicidad;
+    }
+
+    /**
+     * Set the value of tiempoPublicidad
+     */
+    public function setTiempoPublicidad(int $tiempoPublicidad): self
+    {
+        $this->tiempoPublicidad = $tiempoPublicidad;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     */
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of usuario
+     */
+    public function setUsuario(Usuario $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
 }

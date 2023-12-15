@@ -90,4 +90,148 @@ class Cancion
         $this->premiumUsuario = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Get the value of id
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     */
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of titulo
+     */
+    public function getTitulo(): string
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * Set the value of titulo
+     */
+    public function setTitulo(string $titulo): self
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of duracion
+     */
+    public function getDuracion(): int
+    {
+        return $this->duracion;
+    }
+
+    /**
+     * Set the value of duracion
+     */
+    public function setDuracion(int $duracion): self
+    {
+        $this->duracion = $duracion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of ruta
+     */
+    public function getRuta(): ?string
+    {
+        return $this->ruta;
+    }
+
+    /**
+     * Set the value of ruta
+     */
+    public function setRuta(?string $ruta): self
+    {
+        $this->ruta = $ruta;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of numeroReproducciones
+     */
+    public function getNumeroReproducciones(): int
+    {
+        return $this->numeroReproducciones;
+    }
+
+    /**
+     * Set the value of numeroReproducciones
+     */
+    public function setNumeroReproducciones(int $numeroReproducciones): self
+    {
+        $this->numeroReproducciones = $numeroReproducciones;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of album
+     */
+    public function getAlbum(): Album
+    {
+        return $this->album;
+    }
+
+    /**
+     * Set the value of album
+     */
+    public function setAlbum(Album $album): self
+    {
+        $this->album = $album;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     */
+    public function getUsuario(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set the value of usuario
+     */
+    public function setUsuario(\Doctrine\Common\Collections\Collection $usuario): self
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of premiumUsuario
+     */
+    public function getPremiumUsuario(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->premiumUsuario;
+    }
+
+    /**
+     * Set the value of premiumUsuario
+     */
+    public function setPremiumUsuario(\Doctrine\Common\Collections\Collection $premiumUsuario): self
+    {
+        $this->premiumUsuario = $premiumUsuario;
+
+        return $this;
+    }
 }

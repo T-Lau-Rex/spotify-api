@@ -25,4 +25,22 @@ class Favoritas
     private $playlist;
 
 
+
+    /**
+     * Get the value of playlist
+     */
+    public function getPlaylist(): Playlist
+    {
+        return $this->playlist;
+    }
+
+    /**
+     * Set the value of playlist
+     */
+    public function setPlaylist(Playlist $playlist): self
+    {
+        $this->playlist = $playlist;
+
+        return $this;
+    }
 }
