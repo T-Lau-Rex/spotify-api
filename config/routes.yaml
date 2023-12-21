@@ -20,12 +20,14 @@ usuario_sigue_usuario:
    controller: App\Controller\UsuarioController::usuario_sigue_usuario
    methods: POST | DELETE
   
+
   #  CONFIGURACIONES
 
 configuraciones:
    path: /usuarios/{usuario_id}/configuracion 
    controller: App\Controller\ConfigurationController::configuraciones
    methods: GET | PUT
+
 
   #  PODCASTS
 
@@ -49,6 +51,7 @@ podcast_usuario:
    controller: App\Controller\PodcastController::podcast_usuario
    methods: POST | DELETE
 
+
   #  CAPITULOS
 
 capitulos:
@@ -61,6 +64,7 @@ capitulo:
    controller: App\Controller\CapituloController::capitulo
    methods: GET
 
+
   #  SUSCRIPCIONES
 
 suscripciones:
@@ -72,6 +76,7 @@ suscripcione:
    path: /usuario/{id_usuario}/suscripcion/{id_suscripcion}
    controller: App\Controller\SuscripcionController::suscripcione
    methods: GET
+
 
   #  PLAYLISTS
 
@@ -95,6 +100,7 @@ playlist_usuario:
    controller: App\Controller\PlaylistController::playlist_usuario
    methods: GET | PUT | DELETE
 
+
   #  CANCIONES
 
 canciones:
@@ -117,6 +123,7 @@ cancion_playlist:
    controller: App\Controller\CancionController::cancion_playlist
    methods: POST | DELETE
 
+
   #  ARTISTAS
 
 artistas:
@@ -133,6 +140,7 @@ artista_album:
    path: /artista/{id_artista}/album/{id_album}
    controller: App\Controller\ArtistaController::artista_album
    methods: GET
+
 
   #  ALBUMS
 
@@ -151,6 +159,7 @@ album_canciones:
    controller: App\Controller\AlbumController::album_canciones
    methods: GET
 
+
   #  CALIDAD
 
 calidades:
@@ -158,12 +167,14 @@ calidades:
    controller: App\Controller\CalidadController::calidades
    methods: GET
 
+
   #  IDIOMA
 
 idiomas:
    path: /idiomas
    controller: App\Controller\IdiomaController::idiomas
    methods: GET 
+
 
   #  TIPO DESCARGA
 
