@@ -10,15 +10,15 @@ usuario:
    controller: App\Controller\UsuarioController::usuario
    methods: GET|PUT|DELETE
 
-usuarios_sigue_usuario:
-   path: /usuario/{id}/seguidos
-   controller: App\Controller\UsuarioController::usuarios_sigue_usuario
-   methods: GET
+# usuarios_sigue_usuario:
+#    path: /usuario/{id}/seguidos
+#    controller: App\Controller\UsuarioController::usuarios_sigue_usuario
+#    methods: GET
 
-usuario_sigue_usuario:
-   path: /usuario/{id_usuario}/sigue/{id_usuario_seguido} 
-   controller: App\Controller\UsuarioController::usuario_sigue_usuario
-   methods: POST | DELETE
+# usuario_sigue_usuario:
+#    path: /usuario/{id_usuario}/sigue/{id_usuario_seguido} 
+#    controller: App\Controller\UsuarioController::usuario_sigue_usuario
+#    methods: POST | DELETE
   
 
   #  CONFIGURACIONES
@@ -72,7 +72,7 @@ suscripciones:
    controller: App\Controller\SuscripcionController::suscripciones
    methods: GET
 
-suscripcione:
+suscripcion:
    path: /usuario/{id_usuario}/suscripcion/{id_suscripcion}
    controller: App\Controller\SuscripcionController::suscripcione
    methods: GET

@@ -81,7 +81,29 @@ class UsuarioController extends AbstractController
             return new Response($usuarioDel);
         };
 
-        
+        if ($request->isMethod('PUT')) {
+            if (!empty($usuario)) {
+                $bodyData = $request->getContent();
 
+                $usuario = $serializer->deserialize(
+                    $bodyData,
+                    Usuario::class,
+                    'json',
+                    ['object_to_populate' => $usuario]
+                );
+                
+                $this->getDoctrine()->getManager()->persist($usuario);
+                $this->getDoctrine()->getManager()->flush();
+
+                $usuario = $serializer->serialize(
+                    $usuario,
+                    'json',
+                    ['groups' => ['usuario']]
+                );
+                return new Response($usuario);
+            }
+            return new JsonResponse(['msg' => 'Usuario not found']);
+        }
+        
     }
 }

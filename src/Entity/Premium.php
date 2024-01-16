@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Premium
@@ -16,6 +17,8 @@ class Premium
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_renovacion", type="date", nullable=false)
+     * 
+     * @Groups("premium")
      */
     private $fechaRenovacion;
 
@@ -28,6 +31,8 @@ class Premium
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("premium")
      */
     private $usuario;
 
@@ -35,6 +40,8 @@ class Premium
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Cancion", mappedBy="premiumUsuario")
+     * 
+     * @Groups("premium")
      */
     private $cancion = array();
 
