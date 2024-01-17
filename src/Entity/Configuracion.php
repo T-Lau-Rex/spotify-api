@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Configuracion
@@ -16,6 +17,8 @@ class Configuracion
      * @var bool
      *
      * @ORM\Column(name="autoplay", type="boolean", nullable=false)
+     * 
+     * @Groups("configuracion")
      */
     private $autoplay;
 
@@ -23,6 +26,8 @@ class Configuracion
      * @var bool
      *
      * @ORM\Column(name="ajuste", type="boolean", nullable=false)
+     * 
+     * @Groups("configuracion")
      */
     private $ajuste;
 
@@ -30,6 +35,8 @@ class Configuracion
      * @var bool
      *
      * @ORM\Column(name="normalizacion", type="boolean", nullable=false)
+     * 
+     * @Groups("configuracion")
      */
     private $normalizacion;
 
@@ -42,6 +49,8 @@ class Configuracion
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("configuracion")
      */
     private $usuario;
 
@@ -52,6 +61,8 @@ class Configuracion
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="calidad_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("configuracion")
      */
     private $calidad;
 
@@ -62,6 +73,8 @@ class Configuracion
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idioma_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("configuracion")
      */
     private $idioma;
 
@@ -72,6 +85,8 @@ class Configuracion
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="tipo_descarga_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("configuracion")
      */
     private $tipoDescarga;
 

@@ -25,15 +25,15 @@ LAURA:
         Canciones
         Albums
         Idioma
-        Tipo de descarga
+        Tipo de descarga        ✔
 
 
 CORTES:
-        Configuraciones
+        Configuraciones         
         Podcast         -
-        Capitulos
+        Capitulos       ✔
         Playlist
-        Artistas
+        Artistas        ✔
         Calidad         ✔
 
 Cuando se elimina una playlist NO se ELIMINA de la tabla "playlist", 

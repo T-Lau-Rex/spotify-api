@@ -23,10 +23,10 @@ usuario:
 
   #  CONFIGURACIONES
 
-configuraciones:
-   path: /usuarios/{usuario_id}/configuracion 
-   controller: App\Controller\ConfigurationController::configuraciones
-   methods: GET | PUT
+usuarios_configuracion:
+   path: /usuarios/{usuario_id}/configuracion
+   controller: App\Controller\ConfiguracionController::usuarios_configuracion
+   methods: GET|PUT
 
 
   #  PODCASTS
@@ -56,12 +56,12 @@ podcast_usuario:
 
 capitulos:
    path: /podcast/{id}/capitulos
-   controller: App\Controller\CapituloController::capitulos
+   controller: App\Controller\PodcastController::podcast_capitulos
    methods: GET
 
 capitulo:
    path: /podcast/{id_podcast}/capitulo/{id_capitulo}
-   controller: App\Controller\CapituloController::capitulo
+   controller: App\Controller\PodcastController::podcast_capitulo
    methods: GET
 
 
@@ -131,9 +131,9 @@ artistas:
    controller: App\Controller\ArtistaController::artistas
    methods: GET
 
-artista_albumes:
+artista_albums:
    path: /artista/{id}/albums
-   controller: App\Controller\ArtistaController::artista_albumes
+   controller: App\Controller\ArtistaController::artista_albums
    methods: GET
 
 artista_album:
