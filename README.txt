@@ -26,6 +26,7 @@ LAURA:
         Albums
         Idioma
         Tipo de descarga        ✔
+        
 
 
 CORTES:
