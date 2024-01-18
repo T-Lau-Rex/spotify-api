@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Premium;
 use App\Entity\Suscripcion;
 use App\Entity\Usuario;
+use LDAP\Result;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,21 +17,40 @@ class SuscripcionController extends AbstractController
     {
         // path: /usuario/{id}/suscripciones
 
-        //TODO: Todo MAL, empieza de nuevo !!!!!! 
         $id = $request->get("id");
 
-        // Obtener si es premium con del id de la ruta (equivale al id usuario)
-        $premium = $this->getDoctrine()
-            ->getRepository(Premium::class)
-            ->findOneBy(['usuario_id' => $id]);
-
-    
-
-        $suscripcion = $this->getDoctrine()
+        $suscripciones = $this->getDoctrine()
             ->getRepository(Suscripcion::class)
-            ->findOneBy(['premium_usuario_id' => $id]);
+            ->findOneBy(['premiumUsuario' => $id]);
+            
+            $suscripciones = $serializer->serialize(
+                $suscripciones,
+                'json',
+                ['groups' => ['suscripcion', 'premium']]
+            );
+            
+            return new Response($suscripciones);
+            
+        }
 
-        $usuarioPremium = $suscripcion->getPremiumUsuario();
-
-    }
+        
+        
+        public function suscripcion(Request $request, SerializerInterface $serializer)
+        {
+            // path: /usuario/{id_usuario}/suscripcion/{id_suscripcion}
+            $id_usuario = $request->get("id_usuario");
+            $id_suscripcion = $request->get("id_suscripcion");
+            
+            $suscripcion = $this->getDoctrine()
+            ->getRepository(Suscripcion::class)
+            ->findOneBy(['premiumUsuario' => $id_usuario, 'id' => $id_suscripcion]);
+            
+            $suscripcion = $serializer->serialize(
+                $suscripcion,
+                'json',
+                ['groups' => ['suscripcion', 'premium']]
+            );
+            
+            return new Response($suscripcion);
+        }
 }

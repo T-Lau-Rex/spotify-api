@@ -74,7 +74,7 @@ suscripciones:
 
 suscripcion:
    path: /usuario/{id_usuario}/suscripcion/{id_suscripcion}
-   controller: App\Controller\SuscripcionController::suscripcione
+   controller: App\Controller\SuscripcionController::suscripcion
    methods: GET
 
 

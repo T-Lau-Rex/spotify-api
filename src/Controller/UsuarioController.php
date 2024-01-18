@@ -13,7 +13,8 @@ class UsuarioController extends AbstractController
 {
     public function usuarios(Request $request, SerializerInterface $serializer)
     {
-        if ($request->isMethod("GET")){
+        if ($request->isMethod("GET"))
+        {
             $usuarios = $this->getDoctrine()
             ->getRepository(Usuario::class)
             ->findAll();
@@ -22,28 +23,28 @@ class UsuarioController extends AbstractController
                 $usuarios,
                 'json',
                 ['groups' => ['usuario']]);
-                // ['groups' => ['usuario', 'cancion', 'podcast', 'album', 'artista', 'playlist']]);
                 
-                return new Response($usuarios);
-            }
+            return new Response($usuarios);
+        }
             
-            if ($request->isMethod('POST')){
+        if ($request->isMethod('POST'))
+        {
                 
-                $bodyData = $request->getContent();
-                $usuarios = $serializer->deserialize(
-                    $bodyData,
-                    Usuario::class,
-                    'json'
-                );
-                
-                $this->getDoctrine()->getManager()->persist($usuarios);
-                $this->getDoctrine()->getManager()->flush();
-                
-                $usuarios = $serializer->serialize(
-                    $usuarios,
-                    'json',
-                    ['groups' => ['usuario']]
-                );
+            $bodyData = $request->getContent();
+            $usuarios = $serializer->deserialize(
+                $bodyData,
+                Usuario::class,
+                'json'
+            );
+            
+            $this->getDoctrine()->getManager()->persist($usuarios);
+            $this->getDoctrine()->getManager()->flush();
+            
+            $usuarios = $serializer->serialize(
+                $usuarios,
+                'json',
+                ['groups' => ['usuario']]
+            );
             return new Response($usuarios);
         }
         return new JsonResponse(['msg' => $request->getMethod() . ' not allowed']);

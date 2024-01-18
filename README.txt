@@ -22,12 +22,12 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 LAURA:
         Usuarios        ✔
         Suscripciones   -
-        Canciones
+        Canciones       -
         Albums
-        Idioma
-        Tipo de descarga        ✔
+        Idioma          ✔
+        Tipo descarga   ✔
         
-
+Se puede exportar la coleccion de postman. Click derecho exportar
 
 CORTES:
         Configuraciones         

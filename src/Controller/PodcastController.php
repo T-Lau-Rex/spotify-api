@@ -62,7 +62,7 @@ class PodcastController extends AbstractController
             $capitulos = $serializer->serialize(
                 $capitulos,
                 'json',
-                ['groups' => ['capitulo']]
+                ['groups' => ['capitulo', 'podcast']]
             );
     
             return new Response($capitulos);
