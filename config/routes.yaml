@@ -56,12 +56,12 @@ podcast_usuario:
 
 capitulos:
    path: /podcast/{id}/capitulos
-   controller: App\Controller\PodcastController::podcast_capitulos
+   controller: App\Controller\CapituloController::podcast_capitulos
    methods: GET
 
 capitulo:
    path: /podcast/{id_podcast}/capitulo/{id_capitulo}
-   controller: App\Controller\PodcastController::podcast_capitulo
+   controller: App\Controller\CapituloController::podcast_capitulo
    methods: GET
 
 
