@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Cancion;
+use App\Entity\Playlist;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,7 +45,14 @@ class CancionController extends AbstractController
     public function canciones_playlist(Request $request, SerializerInterface $serializer)
     {
         // path: /playlist/{id}/canciones
+        $id = $request->get('id');
 
+        $playlist = $this->getDoctrine()
+            ->getRepository(Playlist::class)
+            ->findOneBy(['id' => $id]);
+        
+        // $canciones = $this->getDoctrine()
+        //     ->getRepository()
     }
 
 }
