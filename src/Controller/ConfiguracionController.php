@@ -19,41 +19,43 @@ class ConfiguracionController extends AbstractController
             ->getRepository(Configuracion::class)
             ->findOneBy(['usuario' => $id]);
 
-        if ($request->isMethod("GET")) {
+        if (!empty($configuracion)) {
 
-            $configuracion = $serializer->serialize(
-                $configuracion,
-                'json',
-                ['groups'=> ['configuracion']]
-            );
-    
-            return new Response($configuracion);
+            if ($request->isMethod("GET")) {
 
+                $configuracion = $serializer->serialize(
+                    $configuracion,
+                    'json',
+                    ['groups'=> ['configuracion']]
+                );
+        
+                return new Response($configuracion);
+
+            }
+
+            if ($request->isMethod("PUT")) {
+
+                $bodyData = $request->getContent();
+
+                $configuracion = $serializer->deserialize(
+                    $bodyData, 
+                    Configuracion::class, 
+                    'json',
+                    ['object_to_populate' => $configuracion]
+                );
+
+                $this->getDoctrine()->getManager()->persist($configuracion);
+                $this->getDoctrine()->getManager()->flush();
+
+                $configuracion = $serializer->serialize(
+                    $configuracion,
+                    'json',
+                    ['groups' => ['configuracion']]
+                );
+        
+                return new Response($configuracion);
+            }
         }
-
-        /*if ($request->isMethod("PUT")) {
-
-            $data = $request->getContent();
-            $updatedConfiguracion = $serializer->deserialize(
-                $data, 
-                Configuracion::class, 
-                'json'
-            );
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($updatedConfiguracion);
-            $entityManager->flush();
-
-            $serializedUpdatedConfiguracion = $serializer->serialize(
-                $updatedConfiguracion,
-                'json',
-                ['groups' => ['configuracion']]
-            );
-    
-            return new Response($serializedUpdatedConfiguracion);
-
-        }*/
-
-        return new JsonResponse(['msg' => 'Usuario not found']);
+        return new JsonResponse(['msg' => 'User configuration not found'], 404);
     }
 }
