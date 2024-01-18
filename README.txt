@@ -30,7 +30,7 @@ LAURA:
 Se puede exportar la coleccion de postman. Click derecho exportar
 
 CORTES:
-        Configuraciones         
+        Configuraciones ✔      
         Podcast         -
         Capitulos       ✔
         Playlist
