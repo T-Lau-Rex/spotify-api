@@ -15,40 +15,44 @@ class SuscripcionController extends AbstractController
 {
     public function suscripciones(Request $request, SerializerInterface $serializer)
     {
-        // path: /usuario/{id}/suscripciones
-
         $id = $request->get("id");
+
+        $usuario =$this->getDoctrine()
+        ->getRepository(Usuario::class)
+        ->findOneBy(['id' => $id]);
 
         $suscripciones = $this->getDoctrine()
             ->getRepository(Suscripcion::class)
-            ->findOneBy(['premiumUsuario' => $id]);
+            ->findBy(['premiumUsuario' => $usuario]);
             
-            $suscripciones = $serializer->serialize(
-                $suscripciones,
-                'json',
-                ['groups' => ['suscripcion', 'premium']]
-            );
-            
-            return new Response($suscripciones);
+        $suscripciones = $serializer->serialize(
+            $suscripciones,
+            'json',
+            ['groups' => ['suscripcion']]
+        );
+        
+        return new Response($suscripciones);
             
         }
 
-        
-        
         public function suscripcion(Request $request, SerializerInterface $serializer)
         {
-            // path: /usuario/{id_usuario}/suscripcion/{id_suscripcion}
+
             $id_usuario = $request->get("id_usuario");
             $id_suscripcion = $request->get("id_suscripcion");
+
+            $usuario = $this->getDoctrine()
+            ->getRepository(Suscripcion::class)
+            ->findOneBy(['id' => $id_usuario]);
             
             $suscripcion = $this->getDoctrine()
             ->getRepository(Suscripcion::class)
-            ->findOneBy(['premiumUsuario' => $id_usuario, 'id' => $id_suscripcion]);
+            ->findBy(['premiumUsuario' => $usuario, 'id' => $id_suscripcion]);
             
             $suscripcion = $serializer->serialize(
                 $suscripcion,
                 'json',
-                ['groups' => ['suscripcion', 'premium']]
+                ['groups' => ['suscripcion']]
             );
             
             return new Response($suscripcion);
