@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -16,6 +17,8 @@ class TarjetaCredito
      * @var string
      *
      * @ORM\Column(name="numero_tarjeta", type="string", length=20, nullable=false)
+     * 
+     * @Groups("tarjeta")
      */
     private $numeroTarjeta;
 
@@ -23,6 +26,8 @@ class TarjetaCredito
      * @var bool
      *
      * @ORM\Column(name="mes_caducidad", type="boolean", nullable=false)
+     * 
+     * @Groups("tarjeta")
      */
     private $mesCaducidad;
 
@@ -30,6 +35,8 @@ class TarjetaCredito
      * @var \DateTime
      *
      * @ORM\Column(name="anyo_caducidad", type="date", nullable=false)
+     * 
+     * @Groups("tarjeta")
      */
     private $anyoCaducidad;
 
@@ -37,6 +44,8 @@ class TarjetaCredito
      * @var int
      *
      * @ORM\Column(name="codigo_seguridad", type="smallint", nullable=false, options={"unsigned"=true})
+     * 
+     * @Groups("tarjeta")
      */
     private $codigoSeguridad;
 
@@ -49,6 +58,8 @@ class TarjetaCredito
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="forma_pago_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("tarjeta")
      */
     private $formaPago;
 

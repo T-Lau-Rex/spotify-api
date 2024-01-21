@@ -20,14 +20,16 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 ''' mysql -u root -pdbrootpass -h dbms-add < spotify.sql '''
 
 LAURA:
-        Usuarios        ✔ Acabarlo bien (faltan cosas)
-        Suscripciones   ✔
+        Usuarios        ✔ Faltan cosas
+        Suscripciones   ✔ Faltan cosas
         Canciones       -
         Albums
         Idioma          ✔
         Tipo descarga   ✔
+
+Entites que utilizo:  Usuario, Suscripcion, Pago, FormaPago, TarjetaCredito,
+Paypal, Premium, Cancion, Album, Idioma
         
-Se puede exportar la coleccion de postman. Click derecho exportar
 
 CORTES:
         Configuraciones ✔      

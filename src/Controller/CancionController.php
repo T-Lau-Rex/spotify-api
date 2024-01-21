@@ -28,7 +28,6 @@ class CancionController extends AbstractController
     
     public function cancion(Request $request, SerializerInterface $serializer)
     {
-        // path: /cancion/{id}
         $id = $request->get("id");
 
         $cancion = $this->getDoctrine()
