@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Eliminada
@@ -16,8 +17,10 @@ class Eliminada
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_eliminacion", type="date", nullable=false)
+     * 
+     * @Groups("eliminada")
      */
-    private $fechaEliminacion;
+    private $fechaEliminacion = 'CURRENT_TIMESTAMP';
 
     /**
      * @var Playlist
@@ -28,10 +31,15 @@ class Eliminada
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="playlist_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("eliminada")
      */
     private $playlist;
 
-
+    public function __construct()
+    {
+        $this->fechaEliminacion = new \DateTime();
+    }
 
     /**
      * Get the value of fechaEliminacion

@@ -43,13 +43,13 @@ class Playlist
     private $numeroCanciones;
 
     /**
-     * @var \DateTime|null
+     * @var \DateTime
      *
      * @ORM\Column(name="fecha_creacion", type="date", nullable=true)
      * 
      * @Groups("playlist")
      */
-    private $fechaCreacion;
+    private $fechaCreacion = 'CURRENT_TIMESTAMP';
 
     /**
      * @var Usuario
@@ -78,6 +78,8 @@ class Playlist
     public function __construct()
     {
         $this->usuarioSeguidor = new \Doctrine\Common\Collections\ArrayCollection();
+
+        $this->fechaCreacion = new \DateTime();
     }
 
 

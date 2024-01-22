@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Activa
@@ -16,6 +17,8 @@ class Activa
      * @var bool
      *
      * @ORM\Column(name="es_compartida", type="boolean", nullable=false)
+     * 
+     * @Groups("activa")
      */
     private $esCompartida;
 
@@ -28,6 +31,8 @@ class Activa
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="playlist_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("activa")
      */
     private $playlist;
 

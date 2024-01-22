@@ -32,10 +32,10 @@ Paypal, Premium, Cancion, Album, Idioma
         
 
 CORTES:
-        Configuraciones ✔      
-        Podcast         -
+        Configuraciones ✔
+        Podcast         ✔
         Capitulos       ✔
-        Playlist
+        Playlist        ✔
         Artistas        ✔
         Calidad         ✔
 
