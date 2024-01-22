@@ -26,7 +26,7 @@ class ConfiguracionController extends AbstractController
                 $configuracion = $serializer->serialize(
                     $configuracion,
                     'json',
-                    ['groups'=> ['configuracion']]
+                    ['groups'=> ['configuracion', 'usuario']]
                 );
         
                 return new Response($configuracion);
@@ -50,7 +50,7 @@ class ConfiguracionController extends AbstractController
                 $configuracion = $serializer->serialize(
                     $configuracion,
                     'json',
-                    ['groups' => ['configuracion']]
+                    ['groups' => ['configuracion', 'usuario']]
                 );
         
                 return new Response($configuracion);
