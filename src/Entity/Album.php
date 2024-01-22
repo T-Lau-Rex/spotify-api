@@ -81,12 +81,12 @@ class Album
     /**
      * @var Artista
      *
-     * @ORM\ManyToOne(targetEntity="album")
+     * @ORM\ManyToOne(targetEntity="Artista")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="artista_id", referencedColumnName="id")
+     * })
      * 
      * @Groups("album")
-     * })
      */
     private $artista;
 

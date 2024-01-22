@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\AnyadeCancionPlaylist;
 use App\Entity\Cancion;
 use App\Entity\Playlist;
+use App\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,13 +23,14 @@ class CancionController extends AbstractController
         $canciones = $serializer->serialize(
             $canciones,
             'json',
-            ['groups' => ['cancion']]
+            ['groups' => ['cancion', 'album']]
         );
         return new Response($canciones);
     }
     
     public function cancion(Request $request, SerializerInterface $serializer)
     {
+        // path: /cancion/{id}
         $id = $request->get("id");
 
         $cancion = $this->getDoctrine()
@@ -37,10 +40,11 @@ class CancionController extends AbstractController
         $cancion = $serializer->serialize(
             $cancion,
             'json',
-            ['groups' => ['cancion']]
+            ['groups' => ['cancion', 'album']]
         );
         return new Response($cancion);
     }
+
     public function canciones_playlist(Request $request, SerializerInterface $serializer)
     {
         // path: /playlist/{id}/canciones
@@ -49,9 +53,57 @@ class CancionController extends AbstractController
         $playlist = $this->getDoctrine()
             ->getRepository(Playlist::class)
             ->findOneBy(['id' => $id]);
-        
-        // $canciones = $this->getDoctrine()
-        //     ->getRepository()
+
+        $tituloPlaylist = $playlist->getTitulo();
+
+        $anyadeCancion = $this->getDoctrine()
+            ->getRepository(AnyadeCancionPlaylist::class)
+            ->findBy(['playlist' => $id]);
+
+        $data = [
+            'Titulo Playlist' => $tituloPlaylist,
+            'Canciones' => $anyadeCancion,
+        ];
+
+        $data = $serializer->serialize(
+            $data,
+            'json',
+            ['groups' => ['anyade_cancion_playlist', 'cancion']]);
+
+        return new Response($data);
     }
 
+    public function cancion_playlist(Request $request, SerializerInterface $serializer)
+    {
+        // path: /playlist/{id_playlist}/cancion/{id_cancion}
+
+        $id_playlist = $request->get('id_playlist');
+        $id_cancion = $request->get('id_cancion');
+
+        // if ($request->isMethod('POST'))
+        // {
+        //     $bodyData = $request->getContent();
+        //     $anyadeCancion = $this->getDoctrine()
+        //         ->getRepository(AnyadeCancionPlaylist::class)
+        //         ->findOneBy(['playlist' => $id_playlist]);
+            
+        //     $usuario = $anyadeCancion->getUsuario();
+        //     $data = [
+        //         $usuario,
+        //         $bodyData
+        //     ];
+
+        //     $anyadeCancion = $serializer->deserialize(
+        //         $data,
+        //         AnyadeCancionPlaylist::class,
+        //         'json'
+        //     );
+
+        // }
+
+        if ($request->isMethod('DELETE'))
+        {
+
+        }
+    }
 }

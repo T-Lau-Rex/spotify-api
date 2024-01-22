@@ -20,10 +20,10 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 ''' mysql -u root -pdbrootpass -h dbms-add < spotify.sql '''
 
 LAURA:
-        Usuarios        ✔ Faltan cosas
-        Suscripciones   ✔ Faltan cosas
-        Canciones       -
-        Albums
+        Usuarios        - Faltan cosas
+        Suscripciones   ✔ 
+        Canciones       - Falta POST | DELETE
+        Albums          ✔
         Idioma          ✔
         Tipo descarga   ✔
 

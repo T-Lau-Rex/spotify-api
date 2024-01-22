@@ -17,6 +17,10 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class SuscripcionController extends AbstractController
 {
+
+//      /usuario/{id}/suscripciones [GET]
+//      ● GET: listado de las suscripciones realizadas por un usuario a partir de su id
+
     public function suscripciones(Request $request, SerializerInterface $serializer)
     {
         $id = $request->get("id");
@@ -43,6 +47,11 @@ class SuscripcionController extends AbstractController
             
         }
 
+//      /usuario/{id}/suscripcion/{id} [GET]
+//      ● GET: obtienes la información asociada a una suscripción dado el id del usuario 
+//      y el id de la suscripción (mes de la suscripción, forma pago, etc…)
+//      ¿+ total? ¿Que más hay?
+
         public function suscripcion(Request $request, SerializerInterface $serializer)
         {
 
@@ -59,41 +68,41 @@ class SuscripcionController extends AbstractController
                 ->getRepository(FormaPago::class)
                 ->findOneBy(['id' => $getFormaPago]);
                 
-            $suscripcion = $this->getDoctrine()
-                ->getRepository(Suscripcion::class)
-                ->findBy(['premiumUsuario' => $id_usuario, 'id' => $id_suscripcion]);
+            // $suscripcion = $this->getDoctrine()
+            //     ->getRepository(Suscripcion::class)
+            //     ->findBy(['premiumUsuario' => $id_usuario, 'id' => $id_suscripcion]);
                 
             # FIXME: Obtener la forma de pago
 
-            // $tarjeta = $this->getDoctrine()
-            //     ->getRepository(TarjetaCredito::class)
-            //     ->findOneBy(['formaPago' => $formaPago]);
+            $tarjeta = $this->getDoctrine()
+                ->getRepository(TarjetaCredito::class)
+                ->findOneBy(['formaPago' => $formaPago]);
 
-            // $paypal = $this->getDoctrine()
-            //     ->getRepository(Paypal::class)
-            //     ->findOneBy(['formaPago' => $formaPago]);
+            $paypal = $this->getDoctrine()
+                ->getRepository(Paypal::class)
+                ->findOneBy(['formaPago' => $formaPago]);
                 
-            // if (!empty($tarjeta)) {
-            //     $formaPago = $tarjeta;
+            if (!empty($tarjeta)) {
+                $formaPago = $tarjeta;
                 
-            // } elseif (!empty($paypal)) {
-            //     $formaPago = $paypal;
+            } elseif (!empty($paypal)) {
+                $formaPago = $paypal;
                 
-            // }
+            }
 
             # FIXME: FIN de obtener la forma de pago
                 
             $data = [
                 'pago' => $pago,
-                
+                'formaPago' => $formaPago
             ];
 
-            $suscripcion = $serializer->serialize(
+            $data = $serializer->serialize(
                 $data,
                 'json',
                 ['groups' => ['suscripcion', 'pago', 'formapago', 'tarjeta', 'paypal']]
             );
             
-            return new Response($suscripcion);
+            return new Response($data);
         }
 }
