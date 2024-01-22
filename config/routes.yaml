@@ -43,13 +43,13 @@ podcast:
 
 podcasts_usuario:
    path: /usuario/{id}/podcasts
-   controller: App\Controller\PodcastController::podcasts_usuario
+   controller: App\Controller\PodcastController::usuario_podcasts
    methods: GET
 
 podcast_usuario:
    path: /usuario/{id_usuario}/podcast/{id_podcast}
-   controller: App\Controller\PodcastController::podcast_usuario
-   methods: POST | DELETE
+   controller: App\Controller\PodcastController::usuario_podcast
+   methods: POST|DELETE
 
 
   #  CAPITULOS
@@ -83,22 +83,22 @@ suscripcion:
 playlists:
    path: /playlists
    controller: App\Controller\PlaylistController::playlists
-   methods: GET | POST
+   methods: GET
 
 playlist:
    path: /playlist/{id}
    controller: App\Controller\PlaylistController::playlist
    methods: GET
 
-playlists_usuario:
+usuario_playlists:
    path: /usuario/{id}/playlists 
-   controller: App\Controller\PlaylistController::playlists_usuario
-   methods: GET
+   controller: App\Controller\PlaylistController::usuario_playlists
+   methods: GET|POST
 
-playlist_usuario:
+usuario_playlist:
    path: /usuario/{id_usuario}/playlist/{id_playlist} 
-   controller: App\Controller\PlaylistController::playlist_usuario
-   methods: GET | PUT | DELETE
+   controller: App\Controller\PlaylistController::usuario_playlist
+   methods: GET|PUT|DELETE
 
 
   #  CANCIONES
@@ -121,7 +121,7 @@ canciones_playlist:
 cancion_playlist:
    path: /playlist/{id_playlist}/cancion/{id_cancion}
    controller: App\Controller\CancionController::cancion_playlist
-   methods: POST | DELETE
+   methods: POST|DELETE
 
 
   #  ARTISTAS

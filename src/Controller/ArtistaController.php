@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Artista;
 use App\Entity\Album;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -39,13 +40,17 @@ class ArtistaController extends AbstractController {
                 ->getRepository(Album::class)
                 ->findBy(['artista' => $id]);
             
-            $albums = $serializer->serialize(
-                $albums,
-                'json',
-                ['groups'=> ['album']]
-            );
-
-            return new Response($albums);
+            if ($albums)
+            {
+                $albums = $serializer->serialize(
+                    $albums,
+                    'json',
+                    ['groups'=> ['album']]
+                );
+    
+                return new Response($albums);
+            }
+            return new JsonResponse(['msg' => 'Artista not found'], 404);
         }
     }
 
@@ -60,13 +65,17 @@ class ArtistaController extends AbstractController {
                 ->getRepository(Album::class)
                 ->findOneBy(['artista' => $id_artista, 'id' => $id_album]);
             
-            $album = $serializer->serialize(
-                $album,
-                'json',
-                ['groups'=> ['album']]
-            );
-
-            return new Response($album);
+            if ($album)
+            {
+                $album = $serializer->serialize(
+                    $album,
+                    'json',
+                    ['groups'=> ['album']]
+                );
+    
+                return new Response($album);
+            }
+            return new JsonResponse(['msg'=> 'Album not found'], 404);
         }
     }
 
