@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Free
@@ -16,6 +17,8 @@ class Free
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_revision", type="date", nullable=false)
+     * 
+     * @Groups("free")
      */
     private $fechaRevision;
 
@@ -23,6 +26,8 @@ class Free
      * @var int
      *
      * @ORM\Column(name="tiempo_publicidad", type="integer", nullable=false, options={"default"="600"})
+     * 
+     * @Groups("free")
      */
     private $tiempoPublicidad = 600;
 
@@ -35,9 +40,18 @@ class Free
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
      * })
+     * 
+     * @Groups("free")
      */
     private $usuario;
 
+     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fechaRevision = new \DateTime();
+    }
 
 
     /**

@@ -20,16 +20,12 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 ''' mysql -u root -pdbrootpass -h dbms-add < spotify.sql '''
 
 LAURA:
-        Usuarios        - Faltan cosas
+        Usuarios        - Corregir DELETE | PUT
         Suscripciones   ✔ 
         Canciones       - Falta POST | DELETE
         Albums          ✔
         Idioma          ✔
-        Tipo descarga   ✔
-
-Entites que utilizo:  Usuario, Suscripcion, Pago, FormaPago, TarjetaCredito,
-Paypal, Premium, Cancion, Album, Idioma
-        
+        Tipo descarga   ✔        
 
 CORTES:
         Configuraciones ✔
@@ -38,7 +34,3 @@ CORTES:
         Playlist        ✔
         Artistas        ✔
         Calidad         ✔
-
-Cuando se elimina una playlist NO se ELIMINA de la tabla "playlist", 
-sino que se le pasa el id a la tabla "eliminada" y se borra de la tabla "activa", 
-y si quieres recuperarla se borra de la tabla "eliminada" y se vuelve a añadir a "activa".

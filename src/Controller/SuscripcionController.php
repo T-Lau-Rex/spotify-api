@@ -89,8 +89,6 @@ class SuscripcionController extends AbstractController
                 $formaPago = $paypal;
                 
             }
-
-            # FIXME: FIN de obtener la forma de pago
                 
             $data = [
                 'pago' => $pago,
