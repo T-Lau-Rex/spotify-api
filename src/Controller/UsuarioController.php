@@ -20,6 +20,9 @@ class UsuarioController extends AbstractController
 {
     public function usuarios(Request $request, SerializerInterface $serializer)
     {
+
+        //? usuarios GET
+
         if ($request->isMethod("GET"))
         {
             $usuarios = $this->getDoctrine()
@@ -34,10 +37,10 @@ class UsuarioController extends AbstractController
             return new Response($usuarios);
         }
         
+        //? usuarios POST
 
         if ($request->isMethod('POST'))
         {
-            
             $bodyData = $request->getContent();
             $usuario = $serializer->deserialize(
                 $bodyData,
@@ -47,10 +50,14 @@ class UsuarioController extends AbstractController
             
             $this->getDoctrine()->getManager()->persist($usuario);
 
+            // Agregar free por defecto
+            
             $free = new Free();
             $free->setUsuario($usuario);
 
             $this->getDoctrine()->getManager()->persist($free);
+
+            // Agregar configuacion por defecto
             
             $configuacion = new Configuracion();
             
@@ -97,7 +104,9 @@ class UsuarioController extends AbstractController
         $usuario = $this->getDoctrine()
             ->getRepository(Usuario::class)
             ->findOneBy(['id' => $id]);
-
+        
+        //? usuario GET
+        
         if ($request->isMethod("GET")){
             $usuario = $serializer->serialize(
                 $usuario,
@@ -107,13 +116,24 @@ class UsuarioController extends AbstractController
             return new Response($usuario);
         };
 
-        //! Corregir esto
+        //? usuario DELETE
 
         if ($request->isMethod('DELETE')) {
 
             $usuarioDel = clone $usuario;
 
+            $configuracion = $this->getDoctrine()
+                ->getRepository(Configuracion::class)
+                ->findOneBy(['usuario' => $id]);
+            
+            $free = $this->getDoctrine()
+                ->getRepository(Free::class)
+                ->findOneBy(['usuario' => $id]);
+
+            $this->getDoctrine()->getManager()->remove($free);
+            $this->getDoctrine()->getManager()->remove($configuracion);
             $this->getDoctrine()->getManager()->remove($usuario);
+            
             $this->getDoctrine()->getManager()->flush();
 
             $usuarioDel = $serializer->serialize(
@@ -124,6 +144,7 @@ class UsuarioController extends AbstractController
             return new Response($usuarioDel);
         };
 
+        //? usuario PUT
         //! Corregir esto
 
         if ($request->isMethod('PUT')) {

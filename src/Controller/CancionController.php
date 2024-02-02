@@ -7,6 +7,7 @@ use App\Entity\Cancion;
 use App\Entity\Playlist;
 use App\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -80,26 +81,34 @@ class CancionController extends AbstractController
         $id_playlist = $request->get('id_playlist');
         $id_cancion = $request->get('id_cancion');
 
-        // if ($request->isMethod('POST'))
-        // {
-        //     $bodyData = $request->getContent();
-        //     $anyadeCancion = $this->getDoctrine()
-        //         ->getRepository(AnyadeCancionPlaylist::class)
-        //         ->findOneBy(['playlist' => $id_playlist]);
+        if ($request->isMethod('POST'))
+        {
+
+            // $bodyData = $request->getContent();
+
+            $playlist = $this->getDoctrine()
+                ->getRepository(Playlist::class)
+                ->findOneBy(['id' => $id_playlist]);
             
-        //     $usuario = $anyadeCancion->getUsuario();
-        //     $data = [
-        //         $usuario,
-        //         $bodyData
-        //     ];
+            $id_usuario = $playlist->getUsuario();
+            $anyadeCancion = new AnyadeCancionPlaylist();
+            
 
-        //     $anyadeCancion = $serializer->deserialize(
-        //         $data,
-        //         AnyadeCancionPlaylist::class,
-        //         'json'
-        //     );
+            $anyadeCancion->setUsuario($id_usuario);
+            $anyadeCancion->setPlaylist($playlist);
+            $anyadeCancion->setCancion($id_cancion);
+            
+            $this->getDoctrine()->getManager()->persist($anyadeCancion);
+            $this->getDoctrine()->getManager()->flush();
 
-        // }
+            $anyadeCancion = $serializer->serialize(
+                $anyadeCancion,
+                'json',
+                ['groups' => ['anyade_cancion_playlist']]
+            );
+            return new Response($anyadeCancion);
+        };
+        return new JsonResponse(['msg' => $request->getMethod() . ' not allowed']);
 
         if ($request->isMethod('DELETE'))
         {

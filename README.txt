@@ -20,7 +20,7 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 ''' mysql -u root -pdbrootpass -h dbms-add < spotify.sql '''
 
 LAURA:
-        Usuarios        - Corregir DELETE | PUT
+        Usuarios        - Corregir PUT
         Suscripciones   ✔ 
         Canciones       - Falta POST | DELETE
         Albums          ✔

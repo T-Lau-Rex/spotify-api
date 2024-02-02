@@ -64,7 +64,13 @@ class AnyadeCancionPlaylist
      */
     private $cancion;
 
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fechaAnyadida = new \DateTime();
+    }
 
     /**
      * Get the value of fechaAnyadida
