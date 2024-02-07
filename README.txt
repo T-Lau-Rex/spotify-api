@@ -22,7 +22,7 @@ Cortés -> ''' docker exec -it spotify-api /bin/bash '''
 LAURA:
         Usuarios        ✔
         Suscripciones   ✔ 
-        Canciones       - Falta POST | DELETE
+        Canciones       ✔
         Albums          ✔
         Idioma          ✔
         Tipo descarga   ✔        

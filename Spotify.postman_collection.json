@@ -133,7 +133,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"Laura\",\r\n  \"password\": \"123\",\r\n  \"email\": \"laura@mail.com\",\r\n  \"genero\": \"M\",\r\n  \"fechaNacimiento\": \"1986-05-31T00:00:00+00:00\",\r\n  \"pais\": \"España\",\r\n  \"codigoPostal\": \"46007\"\r\n}",
+							"raw": "{\r\n  \"username\": \"Lauraa\",\r\n  \"password\": \"123\",\r\n  \"email\": \"lauraa@mail.com\",\r\n  \"genero\": \"M\",\r\n  \"fechaNacimiento\": \"1990-05-31T00:00:00+00:00\",\r\n  \"pais\": \"España\",\r\n  \"codigoPostal\": \"46007\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -158,13 +158,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/usuario/100",
+							"raw": "{{host}}/usuario/112",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"usuario",
-								"100"
+								"112"
 							]
 						}
 					},
@@ -176,13 +176,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/usuario/104",
+							"raw": "{{host}}/usuario/113",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"usuario",
-								"104"
+								"113"
 							]
 						}
 					},
@@ -195,7 +195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"Laura\",\r\n  \"password\": \"123456\",\r\n  \"email\": \"laura@mail.com\",\r\n  \"genero\": \"M\",\r\n  \"fechaNacimiento\": \"1986-05-31T00:00:00+00:00\",\r\n  \"pais\": \"España\",\r\n  \"codigoPostal\": \"46007\"\r\n}",
+							"raw": "{\r\n  \"username\": \"Lauraaa\",\r\n  \"password\": \"123456\",\r\n  \"email\": \"laura111@mail.com\",\r\n  \"genero\": \"M\",\r\n  \"fechaNacimiento\": \"1990-05-31T00:00:00+00:00\",\r\n  \"pais\": \"España\",\r\n  \"codigoPostal\": \"46007\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -203,13 +203,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/usuario/105",
+							"raw": "{{host}}/usuario/112",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"usuario",
-								"105"
+								"112"
 							]
 						}
 					},
@@ -588,13 +588,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/playlist/101/canciones",
+							"raw": "{{host}}/playlist/2/canciones",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"playlist",
-								"101",
+								"2",
 								"canciones"
 							]
 						}
@@ -606,17 +606,8 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{host}}/playlist/2/cancion/3",
+							"raw": "{{host}}/playlist/2/cancion/7",
 							"host": [
 								"{{host}}"
 							],
@@ -624,7 +615,7 @@
 								"playlist",
 								"2",
 								"cancion",
-								"3"
+								"7"
 							]
 						}
 					},
@@ -636,7 +627,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/playlist/2/cancion/3",
+							"raw": "{{host}}/playlist/2/cancion/7",
 							"host": [
 								"{{host}}"
 							],
@@ -644,7 +635,7 @@
 								"playlist",
 								"2",
 								"cancion",
-								"3"
+								"7"
 							]
 						}
 					},
