@@ -10,7 +10,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class IdiomaController extends AbstractController
 {
-    public function idiomas(Request $request, SerializerInterface $serializer)
+    public function idiomas(SerializerInterface $serializer)
     {
         $idiomas = $this->getDoctrine()
             ->getRepository(Idioma::class)

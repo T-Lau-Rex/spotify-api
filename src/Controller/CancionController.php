@@ -16,7 +16,7 @@ class CancionController extends AbstractController
 {
     public function canciones(SerializerInterface $serializer)
     {
-        // path: /canciones
+        //? GET path: /canciones
         $canciones = $this->getDoctrine()
             ->getRepository(Cancion::class)
             ->findAll();
@@ -31,7 +31,7 @@ class CancionController extends AbstractController
     
     public function cancion(Request $request, SerializerInterface $serializer)
     {
-        // path: /cancion/{id}
+        //? GET path: /cancion/{id}
         $id = $request->get("id");
 
         $cancion = $this->getDoctrine()
@@ -48,7 +48,7 @@ class CancionController extends AbstractController
 
     public function canciones_playlist(Request $request, SerializerInterface $serializer)
     {
-        // path: /playlist/{id}/canciones
+        //? GET path: /playlist/{id}/canciones
         $id = $request->get('id');
 
         $playlist = $this->getDoctrine()
@@ -76,7 +76,7 @@ class CancionController extends AbstractController
 
     public function cancion_playlist(Request $request, SerializerInterface $serializer)
     {
-        // path: /playlist/{id_playlist}/cancion/{id_cancion}
+        //TODO: POST path: /playlist/{id_playlist}/cancion/{id_cancion}
 
         $id_playlist = $request->get('id_playlist');
         $id_cancion = $request->get('id_cancion');
@@ -90,13 +90,21 @@ class CancionController extends AbstractController
                 ->getRepository(Playlist::class)
                 ->findOneBy(['id' => $id_playlist]);
             
+            $cancion = $this->getDoctrine()
+                ->getRepository(Cancion::class)
+                ->findOneBy(['id' => $id_cancion]);
+
             $id_usuario = $playlist->getUsuario();
+
+            $usuario = $this->getDoctrine()
+                ->getRepository(Usuario::class)
+                ->findOneBy(['id' => $id_usuario]);
+
             $anyadeCancion = new AnyadeCancionPlaylist();
             
-
-            $anyadeCancion->setUsuario($id_usuario);
+            $anyadeCancion->setUsuario($usuario);
             $anyadeCancion->setPlaylist($playlist);
-            $anyadeCancion->setCancion($id_cancion);
+            $anyadeCancion->setCancion($cancion);
             
             $this->getDoctrine()->getManager()->persist($anyadeCancion);
             $this->getDoctrine()->getManager()->flush();
@@ -104,12 +112,13 @@ class CancionController extends AbstractController
             $anyadeCancion = $serializer->serialize(
                 $anyadeCancion,
                 'json',
-                ['groups' => ['anyade_cancion_playlist']]
+                ['groups' => ['anyade_cancion_playlist', 'usuario', 'playlist', 'cancion']]
             );
             return new Response($anyadeCancion);
         };
         return new JsonResponse(['msg' => $request->getMethod() . ' not allowed']);
 
+        //! DELELE
         if ($request->isMethod('DELETE'))
         {
 

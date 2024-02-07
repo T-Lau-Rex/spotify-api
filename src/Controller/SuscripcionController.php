@@ -17,21 +17,9 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class SuscripcionController extends AbstractController
 {
-
-//      /usuario/{id}/suscripciones [GET]
-//      ● GET: listado de las suscripciones realizadas por un usuario a partir de su id
-
     public function suscripciones(Request $request, SerializerInterface $serializer)
     {
         $id = $request->get("id");
-
-        // $usuario =$this->getDoctrine()
-        // ->getRepository(Usuario::class)
-        // ->findOneBy(['id' => $id]);
-
-        // $suscripciones = $this->getDoctrine()
-        //     ->getRepository(Suscripcion::class)
-        //     ->findBy(['premiumUsuario' => $usuario]);
 
         $suscripciones = $this->getDoctrine()
             ->getRepository(Suscripcion::class)
@@ -46,11 +34,6 @@ class SuscripcionController extends AbstractController
         return new Response($suscripciones);
             
         }
-
-//      /usuario/{id}/suscripcion/{id} [GET]
-//      ● GET: obtienes la información asociada a una suscripción dado el id del usuario 
-//      y el id de la suscripción (mes de la suscripción, forma pago, etc…)
-//      ¿+ total? ¿Que más hay?
 
         public function suscripcion(Request $request, SerializerInterface $serializer)
         {
@@ -67,12 +50,6 @@ class SuscripcionController extends AbstractController
             $formaPago = $this->getDoctrine()
                 ->getRepository(FormaPago::class)
                 ->findOneBy(['id' => $getFormaPago]);
-                
-            // $suscripcion = $this->getDoctrine()
-            //     ->getRepository(Suscripcion::class)
-            //     ->findBy(['premiumUsuario' => $id_usuario, 'id' => $id_suscripcion]);
-                
-            # FIXME: Obtener la forma de pago
 
             $tarjeta = $this->getDoctrine()
                 ->getRepository(TarjetaCredito::class)

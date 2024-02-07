@@ -21,7 +21,7 @@ class UsuarioController extends AbstractController
     public function usuarios(Request $request, SerializerInterface $serializer)
     {
 
-        //? usuarios GET
+        // usuarios GET
 
         if ($request->isMethod("GET"))
         {
@@ -37,7 +37,7 @@ class UsuarioController extends AbstractController
             return new Response($usuarios);
         }
         
-        //? usuarios POST
+        // usuarios POST
 
         if ($request->isMethod('POST'))
         {
@@ -105,7 +105,7 @@ class UsuarioController extends AbstractController
             ->getRepository(Usuario::class)
             ->findOneBy(['id' => $id]);
         
-        //? usuario GET
+        // usuario GET
         
         if ($request->isMethod("GET")){
             $usuario = $serializer->serialize(
@@ -116,7 +116,7 @@ class UsuarioController extends AbstractController
             return new Response($usuario);
         };
 
-        //? usuario DELETE
+        // usuario DELETE
 
         if ($request->isMethod('DELETE')) {
 
@@ -130,10 +130,14 @@ class UsuarioController extends AbstractController
                 ->getRepository(Free::class)
                 ->findOneBy(['usuario' => $id]);
 
-            $this->getDoctrine()->getManager()->remove($free);
-            $this->getDoctrine()->getManager()->remove($configuracion);
+            if (!empty($free)){
+                $this->getDoctrine()->getManager()->remove($free);
+            }
+            if (!empty($configuracion)){
+                $this->getDoctrine()->getManager()->remove($configuracion);
+            }
+
             $this->getDoctrine()->getManager()->remove($usuario);
-            
             $this->getDoctrine()->getManager()->flush();
 
             $usuarioDel = $serializer->serialize(
@@ -144,9 +148,7 @@ class UsuarioController extends AbstractController
             return new Response($usuarioDel);
         };
 
-        //? usuario PUT
-        //! Corregir esto
-
+        // usuario PUT
         if ($request->isMethod('PUT')) {
             if (!empty($usuario)) {
                 $bodyData = $request->getContent();
@@ -157,7 +159,7 @@ class UsuarioController extends AbstractController
                     'json',
                     ['object_to_populate' => $usuario]
                 );
-                
+            
                 $this->getDoctrine()->getManager()->persist($usuario);
                 $this->getDoctrine()->getManager()->flush();
 
@@ -168,8 +170,7 @@ class UsuarioController extends AbstractController
                 );
                 return new Response($usuario);
             }
-            return new JsonResponse(['msg' => 'Usuario not found']);
         }
-        
+        return new JsonResponse(['msg' => $request->getMethod() . ' Usuario not found']);
     }
 }

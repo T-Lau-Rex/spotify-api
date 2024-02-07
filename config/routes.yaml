@@ -8,7 +8,7 @@ usuarios:
 usuario:
    path: /usuario/{id}
    controller: App\Controller\UsuarioController::usuario
-   methods: GET|DELETE| #! PUT
+   methods: GET|DELETE|PUT
 
 # usuarios_sigue_usuario:
 #    path: /usuario/{id}/seguidos

@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class AlbumController extends AbstractController
 {
-    // path: /albums | GET
+    // GET
     public function albums(SerializerInterface $serializer)
     {
         $albums = $this->getDoctrine()
@@ -27,7 +27,7 @@ class AlbumController extends AbstractController
         return new Response($albums);
     }
 
-    // path: /album/{id} | GET
+    // GET
     public function album(Request $request, SerializerInterface $serializer)
     {
         $id = $request->get('id');
@@ -57,7 +57,7 @@ class AlbumController extends AbstractController
         return new Response($album);
     }
 
-    // path: /album/{id}/canciones | GET
+    // GET
     public function album_canciones(Request $request, SerializerInterface $serializer)
     {
         $id = $request->get('id');
