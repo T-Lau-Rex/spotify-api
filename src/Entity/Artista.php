@@ -20,7 +20,7 @@ class Artista
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * 
-     * @Groups("artista")
+     * @Groups({"artista", "artista_album"})
      */
     private $id;
 
@@ -29,7 +29,7 @@ class Artista
      *
      * @ORM\Column(name="nombre", type="string", length=150, nullable=false)
      * 
-     * @Groups("artista")
+     * @Groups({"artista", "artista_album"})
      */
     private $nombre;
 
@@ -38,7 +38,7 @@ class Artista
      *
      * @ORM\Column(name="imagen", type="string", length=255, nullable=true)
      * 
-     * @Groups("artista")
+     * @Groups({"artista", "artista_album"})
      */
     private $imagen;
 
