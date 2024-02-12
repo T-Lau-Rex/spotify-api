@@ -59,7 +59,6 @@ class Playlist
      *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
      * })
      * 
-     * @Groups("playlist")
      */
     private $usuario;
 
@@ -68,7 +67,6 @@ class Playlist
      *
      * @ORM\ManyToMany(targetEntity="Usuario", mappedBy="playlist")
      * 
-     * @Groups("playlist")
      */
     private $usuarioSeguidor = array();
 

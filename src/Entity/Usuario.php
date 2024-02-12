@@ -20,7 +20,7 @@ class Usuario
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $id;
 
@@ -29,7 +29,7 @@ class Usuario
      *
      * @ORM\Column(name="username", type="string", length=45, nullable=false)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $username;
 
@@ -38,7 +38,7 @@ class Usuario
      *
      * @ORM\Column(name="password", type="string", length=150, nullable=false)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $password;
 
@@ -47,7 +47,7 @@ class Usuario
      *
      * @ORM\Column(name="email", type="string", length=150, nullable=false)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $email;
 
@@ -56,7 +56,7 @@ class Usuario
      *
      * @ORM\Column(name="genero", type="string", length=1, nullable=true)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $genero;
 
@@ -65,7 +65,7 @@ class Usuario
      *
      * @ORM\Column(name="fecha_nacimiento", type="date", nullable=false)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $fechaNacimiento;
 
@@ -74,7 +74,7 @@ class Usuario
      *
      * @ORM\Column(name="pais", type="string", length=45, nullable=true)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $pais;
 
@@ -83,7 +83,7 @@ class Usuario
      *
      * @ORM\Column(name="codigo_postal", type="string", length=20, nullable=true)
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $codigoPostal;
 
@@ -100,7 +100,7 @@ class Usuario
      *   }
      * )
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $cancion = array();
 
@@ -117,7 +117,7 @@ class Usuario
      *   }
      * )
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $podcast = array();
 
@@ -151,7 +151,7 @@ class Usuario
      *   }
      * )
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $artista = array();
 
@@ -168,7 +168,7 @@ class Usuario
      *   }
      * )
      * 
-     * @Groups("usuario")
+     * @Groups({"usuario", "usuario_album"})
      */
     private $playlist = array();
 
