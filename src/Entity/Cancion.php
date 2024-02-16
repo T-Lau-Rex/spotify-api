@@ -68,7 +68,6 @@ class Cancion
      *   @ORM\JoinColumn(name="album_id", referencedColumnName="id")
      * })
      * 
-     * @Groups("cancion")
      */
     private $album;
 

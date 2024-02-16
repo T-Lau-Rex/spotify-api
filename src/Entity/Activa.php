@@ -18,7 +18,6 @@ class Activa
      *
      * @ORM\Column(name="es_compartida", type="boolean", nullable=false)
      * 
-     * @Groups("activa")
      */
     private $esCompartida;
 
