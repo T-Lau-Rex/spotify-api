@@ -58,7 +58,6 @@ class Playlist
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
      * })
-     * 
      */
     private $usuario;
 
