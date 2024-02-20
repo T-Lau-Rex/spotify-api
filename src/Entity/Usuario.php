@@ -20,7 +20,7 @@ class Usuario
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $id;
 
@@ -56,7 +56,7 @@ class Usuario
      *
      * @ORM\Column(name="genero", type="string", length=1, nullable=true)
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $genero;
 
@@ -74,7 +74,7 @@ class Usuario
      *
      * @ORM\Column(name="pais", type="string", length=45, nullable=true)
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $pais;
 
@@ -83,7 +83,7 @@ class Usuario
      *
      * @ORM\Column(name="codigo_postal", type="string", length=20, nullable=true)
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $codigoPostal;
 
