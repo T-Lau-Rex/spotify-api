@@ -47,6 +47,8 @@ class UsuarioController extends AbstractController
                 Usuario::class,
                 'json'
             );
+
+            $usuario->setFechaNacimiento(new \DateTime());
             
             $this->getDoctrine()->getManager()->persist($usuario);
 
