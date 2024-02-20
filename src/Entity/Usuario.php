@@ -29,7 +29,7 @@ class Usuario
      *
      * @ORM\Column(name="username", type="string", length=45, nullable=false)
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $username;
 
@@ -38,7 +38,7 @@ class Usuario
      *
      * @ORM\Column(name="password", type="string", length=150, nullable=false)
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $password;
 
@@ -47,7 +47,7 @@ class Usuario
      *
      * @ORM\Column(name="email", type="string", length=150, nullable=false)
      * 
-     * @Groups({"usuario", "usuario_album"})
+     * @Groups({"usuario", "usuario_album", "usuario_api"})
      */
     private $email;
 
