@@ -182,3 +182,11 @@ tipos_descargas:
    path: /tipos_descargas
    controller: App\Controller\TipoDescargaController::tipos_descargas
    methods: GET 
+
+
+  #  ANYADE CANCION PLAYLIST
+
+anyade_cancion_playlist:
+   path: /playlist/{id_playlist}/cancion/{id_cancion}
+   controller: App\Controller\AnyadeCancionPlaylistController::anyade_cancion_playlist
+   methods: POST
